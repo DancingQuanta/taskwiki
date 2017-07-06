@@ -148,7 +148,7 @@ class TaskCache(object):
     def load_syntax(self):
         # Fetch syntax information from taskwiki config
         syntax = util.get_var('taskwiki_syntax')
-        if syntax is in ["default", "markdown", "restructuredtext"]:
+        if syntax in ["default", "markdown", "restructuredtext"]:
             self.syntax = syntax
         else:
             self.syntax = "default"
