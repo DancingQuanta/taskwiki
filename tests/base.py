@@ -14,17 +14,6 @@ server_name = "TaskWikiTestServer"
 server = vimrunner.Server(name=server_name)
 
 
-def header_expand(string, format_header):
-    """
-    Take a string containing 'HEADER(.+)' and replace the string around '.+' 
-    with a string in format_header. The format_header is usually a string with
-    {} with header markup. The {} will be filled with '.+'.
-    """
-    return re.sub('HEADER\((.*?)\)',
-                  lambda match: format_header % match.group(1),
-                  string)
-
-
 class IntegrationTest(object):
 
     viminput = None
