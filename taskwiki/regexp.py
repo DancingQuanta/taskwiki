@@ -134,8 +134,8 @@ PRESET = {
         '\|\|'                      # Delimiter
         '(?P<defaults>[^#\|]+?)'    # Default attrs preset
         ')?'
-        '\s*'                         # Any whitespace
-        '[#]+'                        # Header ending
+        '\s*'                   # Any whitespace
+        '$'                     # End of line
     )
 }
 
