@@ -237,7 +237,7 @@ class MultiSyntaxIntegrationTest(IntegrationTest):
     def test_execute(self, test_syntax):
         
         # Set markup syntax
-        markup, format_header = test_syntax
+        markup, header_expand = test_syntax
         self.markup = markup
 
         # First, run sanity checks
@@ -257,7 +257,7 @@ class MultiSyntaxIntegrationTest(IntegrationTest):
         # Then load the input
         if self.viminput:
             # Expand HEADER
-            self.viminput = header_expand(self.viminput, format_header)
+            self.viminput = header_expand(self.viminput)
             # Unindent the lines
             lines = [self.fill_uuid(l[4:])
                      for l in self.viminput.strip('\n').splitlines()]
@@ -268,7 +268,7 @@ class MultiSyntaxIntegrationTest(IntegrationTest):
 
         # Check expected output
         if self.vimoutput:
-            self.vimoutput = header_expand(self.vimoutput, format_header)
+            self.vimoutput = header_expand(self.vimoutput)
             lines = [
                 self.fill_uuid(l[4:])
                 for l in self.vimoutput.strip('\n').splitlines()[:-1]
