@@ -34,4 +34,4 @@ RUN pip3 install -r requirements.txt
 RUN mkdir /root/.vim/bundle/taskwiki
 WORKDIR /root/.vim/bundle/taskwiki
 
-CMD ["sh", "-c", "python3 -m pytest -vv tests/"]
+CMD ["sh", "-c", "python3 -m pytest -vvv tests/test_choose.py"]
