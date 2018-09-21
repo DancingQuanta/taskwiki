@@ -237,8 +237,7 @@ class MultiSyntaxIntegrationTest(IntegrationTest):
     def test_execute(self, test_syntax):
         
         # Set markup syntax
-        markup, header_expand = test_syntax
-        self.markup = markup
+        _, header_expand = test_syntax
 
         # First, run sanity checks
         success = False
@@ -387,14 +386,14 @@ class MockCache(object):
     warriors = {'default': 'default'}
     buffer_has_authority = True
 
-    def __init__(self):
+    def __init__(self, test_syntax):
         from taskwiki import store
         self.buffer = MockBuffer()
         self.line = store.LineStore(self)
         self.vwtask = dict()
         self.task = dict()
         self.viewport = dict()
-        self.markup_syntax = None
+        self.markup_syntax, _ = test_syntax
 
     def reset(self):
         self.warriors.clear()
