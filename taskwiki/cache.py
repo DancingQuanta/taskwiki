@@ -108,7 +108,7 @@ class TaskCache(object):
         default_rc = util.get_var('taskwiki_taskrc_location') or '~/.taskrc'
         default_data = util.get_var('taskwiki_data_location') or None
         extra_warrior_defs = util.get_var('taskwiki_extra_warriors', {})
-        markup_syntax = util.get_var('taskwiki_markup_syntax') or 'default'
+        markup_syntax = util.get_var('taskwiki_markup_syntax', 'default')
 
         # Handle bytes (vim returnes bytes for Python3)
         if six.PY3:
